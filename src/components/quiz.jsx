@@ -63,11 +63,14 @@ const Quiz = () => {
                             </li>
                         </ul>
                         {currentQuestion === Questions.length - 1 ? (
-                            <button className="btn btn-primary mt-3" onClick={finishQuiz}>
+                            <button className={optionChosen !== "" ? "btn btn-primary mt-3" : "btn btn-primary mt-3 disabled"}
+                                        onClick={finishQuiz}>
                                 Finish Quiz
                             </button>
                         ) : (
-                            <button onClick={nextQuestion} className="btn btn-primary mt-3">Next Question</button>
+                            <button onClick={nextQuestion}
+                                    className={optionChosen !== "" ? "btn btn-primary mt-3" : "btn btn-primary mt-3 disabled"}
+                            >Next Question</button>
                         )}
                     </div>
                 </div>

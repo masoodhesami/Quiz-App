@@ -3,7 +3,7 @@ import {quizContext} from "../helpers/contexts";
 import "../App.css"
 
 const MainMenu = () => {
-    const {setNavigator, setUsername} = useContext(quizContext)
+    const {setNavigator, setUsername, username} = useContext(quizContext)
     return (
         <div className={"card"}>
             <div className={"card-body"}>
@@ -34,7 +34,11 @@ const MainMenu = () => {
                                 <div className={"row"}>
                                     <button onClick={() => {
                                         setNavigator("quiz")
-                                    }} type="button" className="btn btn-outline-primary ">Start Quiz
+                                    }}
+                                            type="button"
+                                            className={
+                                                username !== "" ? "btn btn-outline-primary " : "btn btn-outline-primary disabled"
+                                            }>Start Quiz
                                     </button>
                                 </div>
                             </div>
