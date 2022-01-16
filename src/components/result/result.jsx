@@ -1,6 +1,6 @@
 import React from 'react';
-import ResultHeader from "./result/resultHeader";
-import MainResult from "./result/mainResult";
+import ResultHeader from "./resultHeader";
+import MainResult from "./mainResult";
 
 const Result = () => {
 

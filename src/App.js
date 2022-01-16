@@ -2,7 +2,7 @@ import './App.css';
 import {useState} from "react";
 import MainMenu from "./components/menu/mainMenu";
 import Quiz from "./components/quiz/quiz";
-import Result from "./components/result";
+import Result from "./components/result/result";
 import {quizContext} from "./helpers/contexts"
 
 function App() {
