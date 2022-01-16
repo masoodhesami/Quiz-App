@@ -8,17 +8,17 @@ import {quizContext} from "./helpers/contexts"
 function App() {
     const [navigator, setNavigator] = useState("menu")
     const [username, setUsername] = useState("")
+    const [score, setScore] = useState("")
     return (
-        <div className="App">
-            <div className="card">
-                <quizContext.Provider value={{navigator, setNavigator}}>
-                    <div className="card-body">
-                        {navigator === "menu" && <MainMenu/>}
-                        {navigator === "quiz" && <Quiz/>}
-                        {navigator === "result" && <Result/>}
-                    </div>
-                </quizContext.Provider>
-            </div>
+        <div>
+            <quizContext.Provider value={{
+                navigator, setNavigator, username, setUsername,
+                score, setScore
+            }}>
+                {navigator === "menu" && <MainMenu/>}
+                {navigator === "quiz" && <Quiz/>}
+                {navigator === "result" && <Result/>}
+            </quizContext.Provider>
         </div>
     );
 }
