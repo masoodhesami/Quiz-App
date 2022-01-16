@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
+import MainMenu from "./components/mainMenu";
+import Quiz from "./components/quiz";
+import Result from "./components/result";
+import {quizContext} from "./helpers/contexts"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [navigator, setNavigator] = useState("menu")
+    return (
+        <div className="App">
+            <quizContext.Provider value={{navigator, setNavigator}}>
+                {navigator === "menu" && <MainMenu/>}
+                {navigator === "quiz" && <Quiz/>}
+                {navigator === "result" && <Result/>}
+            </quizContext.Provider>
+        </div>
+    );
 }
 
 export default App;
