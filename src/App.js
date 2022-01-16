@@ -1,14 +1,14 @@
 import './App.css';
 import {useState} from "react";
-import MainMenu from "./components/mainMenu";
-import Quiz from "./components/quiz";
+import MainMenu from "./components/menu/mainMenu";
+import Quiz from "./components/quiz/quiz";
 import Result from "./components/result";
 import {quizContext} from "./helpers/contexts"
 
 function App() {
     const [navigator, setNavigator] = useState("menu")
     const [username, setUsername] = useState("")
-    const [score, setScore] = useState("")
+    const [score, setScore] = useState(0)
     return (
         <div>
             <quizContext.Provider value={{
